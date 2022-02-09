@@ -21,13 +21,29 @@ def myfirstFunction(x):
 
 # myfirstFunction(923)
             
-def stairCase(maxRange):
+def stairCase(maxRange, symbol="#", symbol2="*"):
     for x in range(maxRange):
         string=""
         for y in range(maxRange):
             if y <= x:
-                string += "#"
+                string += (symbol+symbol2)
             else:
                 string = " " + string
         print(string)
-stairCase(16)
+
+
+def reverseStaircase(maxRange, symbol, symbol2="%"):
+     for x in range(maxRange, 0, -1):
+        string=""
+        for y in range(maxRange, 0, -1):
+            if y <= x:
+                string += (symbol+symbol2)
+            else:
+                string = " " + string
+        print(string)
+
+def upDown(maxRange, symbol):
+    stairCase(maxRange, symbol)
+    reverseStaircase(maxRange, symbol)
+
+upDown(5, "A")
